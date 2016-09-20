@@ -1,0 +1,7 @@
+{
+    "pools": [{
+        "name": "Monero",
+        "ticker": "XMR",
+        "daemonrpc": "http://blockchain.monerostats.com:6601/"
+    }]
+}
