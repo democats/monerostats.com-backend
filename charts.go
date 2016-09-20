@@ -34,9 +34,7 @@ type CoinHeight struct {
 }
 
 type Block struct {
-	ID      string `json:"id"`
-	Jsonrpc string `json:"jsonrpc"`
-	Result  struct {
+	Result struct {
 		Block struct {
 			AlreadyGeneratedCoins        int     `json:"alreadyGeneratedCoins"`
 			AlreadyGeneratedTransactions int     `json:"alreadyGeneratedTransactions"`
@@ -65,7 +63,6 @@ type Block struct {
 			} `json:"transactions"`
 			TransactionsCumulativeSize int `json:"transactionsCumulativeSize"`
 		} `json:"block"`
-		Status string `json:"status"`
 	} `json:"result"`
 }
 
