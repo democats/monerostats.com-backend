@@ -36,7 +36,7 @@ type CoinHeight struct {
 type Block struct {
 	Result struct {
 		Block struct {
-			AlreadyGeneratedCoins        int     `json:"alreadyGeneratedCoins"`
+			AlreadyGeneratedCoins        string  `json:"alreadyGeneratedCoins"`
 			AlreadyGeneratedTransactions int     `json:"alreadyGeneratedTransactions"`
 			BaseReward                   int     `json:"baseReward"`
 			BlockSize                    int     `json:"blockSize"`
@@ -378,7 +378,7 @@ func main() {
 					blocks_penalty_percentage_chart = addPointToChart(last_timestamp, blocks_penalty_percentage, blocks_penalty_percentage_chart, blocks_penalty_percentage_filename)
 
 					// Generated coins
-					generated_coins, err := uint64(block.Result.Block.AlreadyGeneratedCoins)
+					generated_coins, err := strconv.ParseUint(block.Result.Block.AlreadyGeneratedCoins, 10, 64)
 					check(err)
 					generated_coins_chart = addPointToChart(last_timestamp, generated_coins, generated_coins_chart, generated_coins_filename)
 
